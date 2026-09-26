@@ -12,6 +12,9 @@ This is a research artifact, not a production security scanner. The interesting
 results include the ones where the method did not work; see
 [STATUS.md](STATUS.md) and [docs/experiments-round2.md](docs/experiments-round2.md).
 
+Short write-ups: [what the deny rules didn't cover](posts/1-what-claude-code-deny-rules-dont-cover.md)
+and [why version diffing didn't work](posts/2-why-you-cant-regression-test-a-coding-agent.md).
+
 ---
 
 ## The question
@@ -269,6 +272,7 @@ the command; FS-001, FS-007 and FS-008 pass.
 README.md               this file
 STATUS.md               scope, what is settled, what is open
 BLOG.md                 a longer write-up of the investigation
+posts/                  the same material as two short posts
 research/
   INC-019-disclosure.md the INC-019 technical write-up
   incidents.yaml        25 catalogued policy/runtime mismatches, with sources
