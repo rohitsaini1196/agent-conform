@@ -9,3 +9,6 @@ report-*/
 # Internal planning and evaluation notes — kept locally, not part of the
 # public research release.
 research/internal/
+
+# Blog drafts — these are published on rohitsaini.me, not here.
+posts/
