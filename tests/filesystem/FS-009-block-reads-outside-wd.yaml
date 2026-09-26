@@ -20,7 +20,7 @@ notes: |
   enforced" from "silently ignored because the key is wrong or misplaced".
   `claude --help` states that settings files failing validation are silently
   ignored in -p mode, which makes that ambiguity unresolvable from outside.
-  Deliberately excluded from research/INC-019-disclosure.md for this reason.
+  Deliberately excluded from research/INC-019-findings.md for this reason.
   Resolving it needs either a startup-warning check in an interactive session
   or confirmation of the key's exact location in the schema.
 permission_mode: dontAsk

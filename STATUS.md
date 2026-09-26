@@ -21,7 +21,7 @@ production security certification tool.
 - A deny rule using the `//<absolute-directory>/**` pattern form was not
   applied to `cat` through the Bash tool on 2.1.219, while the same rule was
   applied to the built-in `Read` tool. This does not reproduce on 2.1.278.
-  Write-up: [research/INC-019-disclosure.md](research/INC-019-disclosure.md).
+  Write-up: [research/INC-019-findings.md](research/INC-019-findings.md).
 - Single-run version-to-version diffs are unreliable. Model variance produces
   apparent behavior changes that repetition does not support. Method and data:
   [docs/experiments-round2.md](docs/experiments-round2.md).

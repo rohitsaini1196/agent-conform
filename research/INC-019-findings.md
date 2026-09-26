@@ -1,19 +1,16 @@
-```
-STATUS: READY FOR MANUAL REVIEW
-```
+# INC-019: a Read deny rule that did not cover Bash `cat`
 
-# Claude Code: `Read` deny rule with an absolute-directory pattern was not applied to Bash `cat` (observed 2.1.219, not reproducible on 2.1.278)
+Observed on Claude Code 2.1.219. Not reproducible on 2.1.278.
 
-**Not sent. Prepared for manual submission at the reviewer's discretion.**
+A write-up of behavior that was observed, narrowed down, and has since been
+fixed. It is kept because the differential method used to isolate the cause is
+reusable, and because the evidence is useful if the behavior ever returns.
 
-Internal reference: INC-019.
-Observed: 2026-09-20. Retested: 2026-09-21.
-Intended recipient: Anthropic — security mailbox or the Claude Code issue
-tracker, whichever the reviewer judges appropriate.
+Internal reference: INC-019. Observed 2026-09-20, retested 2026-09-21.
 
 ---
 
-## Headline
+## Summary
 
 On Claude Code **2.1.219**, a `permissions.deny` rule of the form
 `Read(//<absolute-directory>/**)` was enforced for the built-in `Read` tool but
@@ -23,11 +20,8 @@ in the same session, under the same settings file.
 On Claude Code **2.1.278** this no longer reproduces. The `cat` is refused and
 recorded in `permission_denials`.
 
-We are reporting it as a **runtime/documentation inconsistency that appears to
-have been fixed**, for two reasons: to confirm the fix is intentional and
-complete rather than incidental, and because the historical evidence may be
-useful if the behavior is ever reintroduced. We are **not** calling it a
-vulnerability; we never characterized exploitability.
+This is a **runtime/documentation inconsistency**, not a vulnerability.
+Exploitability was never characterized and no attack scenario was constructed.
 
 ## Current status
 
@@ -234,15 +228,11 @@ answered by searching the agent's output rather than by trusting its narration.
 No secrets appear in any committed report; absolute paths in committed evidence
 have the home directory redacted.
 
-## Questions for the vendor
+## Open questions
 
-1. Was this behavior on 2.1.219 known, and was the change between 2.1.220 and
-   2.1.278 an intentional fix?
-2. Is the `//<directory>/**` form now consulted on all Bash file-command paths,
-   or was the fix narrower?
-3. Is there a version range users should be aware of if they relied on this
-   pattern form for credential-directory fencing?
-
-## Contact
-
-To be completed by the reviewer before sending.
+- Which release between 2.1.220 and 2.1.278 changed the behavior was not
+  bisected.
+- Whether the `//<directory>/**` form is now consulted on every Bash
+  file-command path, or whether the change was narrower, was not tested.
+- The managed-settings layer was never exercised; the policy here was delivered
+  through `--settings`, which is a user-level source.

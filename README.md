@@ -36,7 +36,7 @@ and watching what happens can.
 Sometimes the two diverge. On Claude Code 2.1.219, a deny rule written in the
 documented absolute-directory form blocked the built-in `Read` tool and did not
 block `cat` through the Bash tool on the same path
-([INC-019](research/INC-019-disclosure.md)). That behavior does not reproduce on
+([INC-019](research/INC-019-findings.md)). That behavior does not reproduce on
 2.1.278.
 
 ## What the harness does
@@ -274,7 +274,7 @@ STATUS.md               scope, what is settled, what is open
 BLOG.md                 a longer write-up of the investigation
 posts/                  the same material as two short posts
 research/
-  INC-019-disclosure.md the INC-019 technical write-up
+  INC-019-findings.md the INC-019 technical write-up
   incidents.yaml        25 catalogued policy/runtime mismatches, with sources
   sources.md            references
 docs/
