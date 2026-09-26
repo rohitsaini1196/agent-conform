@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+# local scratch runs; keep only the curated "report examples/"
+report-*/
+
+# Internal planning and evaluation notes — kept locally, not part of the
+# public research release.
+research/internal/
